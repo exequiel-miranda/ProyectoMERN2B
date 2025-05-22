@@ -1,0 +1,215 @@
+/* Container principal */
+.backfirstuse {
+  background: linear-gradient(135deg, #01265a 0%, #324c69 90%);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrar vertical y horizontal */
+  color: #eaf0f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem 1rem; /* para que no quede pegado a bordes */
+  box-sizing: border-box;
+  margin-top:200px
+}
+
+/* Quité margin-top-global para que el padding maneje espacio */
+
+/* Contenedor interno, centrado y con max-width */
+.inner-container {
+  
+  width: 100%;
+  margin-top:200px
+}
+
+/* Título con efecto fade-in */
+.welcome-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #f0f4f8;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+  animation: fadeIn 1.2s ease forwards;
+  text-align: center;
+  margin-top:200px
+}
+
+/* Línea decorativa animada */
+.animated-underline {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, #eaf0f4 0%, #01265a 100%);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  animation: growLine 1.2s ease forwards;
+  
+}
+
+/* Flex layout */
+.equal-height-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center; /* Cambié stretch por center */
+  max-width: 100%;
+  gap: 2rem;
+}
+
+/* Imagen */
+.image-side {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px; /* Fijamos mínimo para que la imagen tenga espacio */
+}
+
+.full-height-img {
+  max-height: 350px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow:
+    0 0 20px 6px rgba(1, 38, 90, 0.7),
+    0 8px 30px rgba(3, 58, 107, 0.5);
+  transition: transform 0.4s ease;
+}
+
+.full-height-img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Texto container */
+.text-first-container {
+  flex: 1 1 0;
+  background: linear-gradient(145deg, #264564, #1d3557);
+  border-radius: 16px;
+  box-shadow: inset 0 0 15px rgba(255,255,255,0.1);
+  padding: 2.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dbe9f4;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  min-height: 350px;
+  box-sizing: border-box;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+/* Botón */
+.btn-startfirstuse {
+  background: linear-gradient(90deg, #004080, #0066cc);
+  color: #eaf0f4;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  user-select: none;
+  text-decoration: none;
+  text-align: center;
+  max-width: 220px;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn-startfirstuse:hover,
+.btn-startfirstuse:focus {
+  background: linear-gradient(90deg, #0066cc, #003366);
+  color: #fff;
+  box-shadow:
+    0 8px 20px rgba(0, 102, 204, 0.9),
+    0 0 20px rgba(0, 102, 204, 0.8);
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Animaciones */
+
+/* Fade In */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Línea animada */
+@keyframes growLine {
+  0% { width: 0; }
+  100% { width: 50%; }
+}
+
+/* Slide left */
+.animate-slide-left {
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide right */
+.animate-slide-right {
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .equal-height-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .image-side,
+  .text-first-container {
+    min-height: auto;
+    max-width: 100%;
+  }
+  .full-height-img {
+    max-height: 280px;
+  }
+  .welcome-title {
+    font-size: 2.4rem;
+  }
+  .animated-underline {
+    width: 70%;
+  }
+}
+

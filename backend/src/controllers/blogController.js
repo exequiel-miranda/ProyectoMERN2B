@@ -26,24 +26,23 @@ blogController.createBlog = async (req, res) => {
     let imageUrl = "";
 
     if (req.file) {
-      //Subir el archivo a Cloudinary
-      const result = await cloudinary.uploader.upload(
-        req.file.path, 
-        {
+      const result = await cloudinary.uploader.upload(req.file.path, {
         folder: "public",
         allowed_formats: ["jpg", "png", "jpeg"],
-        });
+      });
       imageUrl = result.secure_url;
     }
 
     const newBlog = new blogModel({ title, content, image: imageUrl });
-    newBlog.save();
+    await newBlog.save();
 
     res.json({ message: "Blog saved" });
   } catch (error) {
     console.log("error" + error);
+    res.status(500).json({ error: "Error saving blog" });
   }
 };
+
 
 blogController.updateBlog = async (req, res) => {
   try {
@@ -69,6 +68,15 @@ blogController.updateBlog = async (req, res) => {
     res.json({ message: "Blog updated" });
   } catch (error) {
     console.log("error" + error);
+  }
+};
+blogController.deleteBlog = async (req, res) => {
+  try {
+    await blogModel.findByIdAndDelete(req.params.id);
+    res.json({ message: "Blog eliminado correctamente" });
+  } catch (error) {
+    console.error("Error al eliminar blog:", error);
+    res.status(500).json({ error: "Error al eliminar blog" });
   }
 };
 

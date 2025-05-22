@@ -1,0 +1,132 @@
+.navbary {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 99999;
+  background-color: #01265a;
+  border-color: #01265a;
+  padding: 6px 20px; /* reducido */
+  box-shadow: 0 4px 12px rgba(1, 38, 90, 0.7);
+  backdrop-filter: saturate(180%) blur(10px);
+  transition: background-color 0.3s ease;
+}
+
+.navbary:hover {
+  background-color: #023973;
+  box-shadow: 0 6px 20px rgba(3, 58, 107, 0.8);
+}
+
+.itemnav {
+  color: #eaf0f4 !important;
+  font-weight: 600;
+  margin-left: 10px; /* reducido */
+  font-size: 0.85rem; /* más pequeño */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.itemnav:hover {
+  color: #fff;
+}
+
+.nav-link.active {
+  border-bottom: 3px solid #eaf0f4;
+  font-weight: 700;
+}
+
+.navbar-toggler {
+  border: 2px solid #eaf0f4;
+  border-radius: 6px;
+  width: 35px; /* reducido */
+  height: 30px; /* reducido */
+  position: relative;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.navbar-toggler-icon {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 16px; /* reducido */
+  margin: auto;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background-color: #eaf0f4;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.navbar-toggler-icon span {
+  top: 6.5px;
+  left: 0;
+}
+
+.navbar-toggler-icon::before {
+  top: 0;
+  left: 0;
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;
+  left: 0;
+}
+
+.navbar-toggler.open .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 6.5px;
+}
+
+.navbar-toggler.open .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  bottom: 6.5px;
+}
+
+.navbar-toggler.open .navbar-toggler-icon span {
+  opacity: 0;
+}
+
+.collapse.navbar-collapse {
+  transition: max-height 0.4s ease;
+}
+
+body {
+  padding-top: 70px; /* ajustado al nuevo tamaño del nav */
+  background-color: white;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2.5px;
+  background-color: #eaf0f4;
+  border-radius: 3px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+

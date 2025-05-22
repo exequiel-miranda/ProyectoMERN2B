@@ -1,0 +1,74 @@
+.card-branch {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: auto;
+}
+
+.card-branch:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.branch-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.branch-header h4 {
+  font-size: 1.5rem;
+  color: #2a5d8f;
+  margin-bottom: 0.25rem;
+}
+
+.branch-subtitle {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.branch-info {
+  text-align: left;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+}
+
+.branch-info p {
+  margin: 0.4rem 0;
+}
+
+.btn-editbranch {
+  background-color: #2a5d8f;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  align-self: center;
+  width: 100%;
+  max-width: 200px;
+}
+
+.btn-editbranch:hover {
+  background-color: #1d3f66;
+}
+
+@media (max-width: 500px) {
+  .card-branch {
+    padding: 1.2rem;
+  }
+
+  .branch-info {
+    font-size: 0.95rem;
+  }
+}

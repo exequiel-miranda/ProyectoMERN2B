@@ -3,14 +3,14 @@ import multer from "multer";
 import blogController from "../controllers/blogController.js";
 
 const router = express.Router();
+const upload = multer({ dest: "public/" });
 
-//configurar una carpeta local que guarde las imagenes
-const upload = multer({dest: "public/"})
+router.get("/", blogController.getAllBlog);
+router.post("/", upload.single("image"), blogController.createBlog);
+router.put("/:id", upload.single("image"), blogController.updateBlog);
 
-router
-  .route("/")
-  .get(blogController.getAllBlog)
-  
-  .post(upload.single("image"), blogController.createBlog);
+// ⚠️ ESTA ES LA QUE TE FALTA
+router.delete("/:id", blogController.deleteBlog); 
 
 export default router;
+
