@@ -21,7 +21,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: "*",
+        origin: "https://proyecto-mern-2-b-ayfp-git-master-rodrigotorreszzs-projects.vercel.app",
 
         credentials: true
     })

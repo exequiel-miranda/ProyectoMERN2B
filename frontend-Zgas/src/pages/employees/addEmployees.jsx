@@ -45,7 +45,7 @@ const AddEmployee = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:4000/api/employee', {
+      const response = await fetch('https://proyectomern2b-qwwg.onrender.com/api/employee', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

@@ -19,7 +19,7 @@ const Branches = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch('http://localhost:4000/api/branches');
+      const response = await fetch('https://proyectomern2b-qwwg.onrender.com/api/branches');
       if (!response.ok) throw new Error(`Error HTTP! estado: ${response.status}`);
       const data = await response.json();
       setBranches(Array.isArray(data) ? data : []);
@@ -35,7 +35,7 @@ const Branches = () => {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`http://localhost:4000/api/branches/${id}`, {
+      const response = await fetch(`https://proyectomern2b-qwwg.onrender.com/api/branches/${id}`, {
         method: 'DELETE',
       });
 

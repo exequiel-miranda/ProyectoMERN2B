@@ -43,7 +43,7 @@ const AddBranch = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:4000/api/branches', {
+      const response = await fetch('https://proyectomern2b-qwwg.onrender.com/api/branches', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

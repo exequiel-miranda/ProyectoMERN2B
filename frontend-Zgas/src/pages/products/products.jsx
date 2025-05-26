@@ -14,7 +14,7 @@ const Products = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch('http://localhost:4000/api/products');
+      const response = await fetch('https://proyectomern2b-qwwg.onrender.com/api/products');
       if (!response.ok) {
         throw new Error(`Error HTTP! Estado: ${response.status}`);
       }
@@ -38,7 +38,7 @@ const Products = () => {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`http://localhost:4000/api/products/${id}`, {
+      const response = await fetch(`https://proyectomern2b-qwwg.onrender.com/api/products/${id}`, {
         method: 'DELETE',
       });
 

@@ -96,7 +96,7 @@ const EditBranches = () => {
         country: form.country
       };
 
-      const response = await fetch(`http://localhost:4000/api/branches/${form.id}`, {
+      const response = await fetch(`https://proyectomern2b-qwwg.onrender.com/api/branches/${form.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedBranch),
