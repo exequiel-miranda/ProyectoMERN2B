@@ -6,7 +6,7 @@ import FirstUse from './pages/firstuse/firstuse.jsx';
 import Employees from './pages/employees/employee.jsx';
 import Nav from './components/Nav/Nav.jsx';  // Asegúrate que la ruta y extensión son correctas
 import AddEmployee from './pages/employees/addEmployees.jsx';
-import EditEmployee from './pages/employees/EditEmployee';
+import EditEmployee from './pages/employees/editemployee.jsx';
 import Products from './pages/products/products.jsx';
 import AddProduct from './pages/products/addProducts.jsx';
 import EditProduct from './pages/products/editProducts.jsx';
