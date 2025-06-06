@@ -28,6 +28,13 @@ const customersSchema = new Schema(
       type: String,
     },
 
+    edad: {
+      type: Number,
+      min: 18,
+      max: 100,
+      require: true
+    },
+
     password: {
       type: String,
     },
