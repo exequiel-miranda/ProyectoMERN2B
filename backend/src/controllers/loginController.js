@@ -90,6 +90,7 @@ loginController.login = async (req, res) => {
 
     // Guardar token en cookie
     res.cookie("authToken", token, {
+      httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000, 
       path: '/', 
       sameSite: 'lax'
