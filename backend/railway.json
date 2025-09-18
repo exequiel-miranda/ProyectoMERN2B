@@ -1,0 +1,12 @@
+{
+  "build": {
+    "builder": "NIXPACKS",
+    "nixpacksConfig": {
+      "phases": {
+        "install": {
+          "cmds": ["npm install --legacy-peer-deps"]
+        }
+      }
+    }
+  }
+}

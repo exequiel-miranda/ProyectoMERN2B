@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "cloudinary": "^1.39.0",
-    "multer-storage-cloudinary": "^4.0.0"
+    "cloudinary": "^2.7.0"
   }
 }
